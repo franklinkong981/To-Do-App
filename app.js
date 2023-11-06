@@ -19,9 +19,26 @@ function addNewListItem(itemToDo) {
     newLi.append(newSpan);
     const markButton = document.createElement("button");
     markButton.innerText = "Mark as Complete";
+    markButton.classList.add("mark-button")
     const removeButton = document.createElement("button");
     removeButton.innerText = "Remove";
+    removeButton.classList.add("remove-button");
     newLi.append(markButton);
     newLi.append(removeButton);
     return newLi;
 }
+
+ul.addEventListener("click", function(e) {
+    if (e.target.classList.contains("mark-button")) {
+        const listItemToMark = e.target.previousElementSibling;
+        if (e.target.innerText === "Mark as Complete") {
+            e.target.innerText = "Unmark";
+            listItemToMark.style.textDecoration = "line-through";
+        }
+        else {
+            e.target.innerText = "Mark as Complete";
+            listItemToMark.style.textDecoration = "none";
+        }
+    }
+    
+})
