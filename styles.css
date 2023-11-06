@@ -30,6 +30,7 @@ li > span {
     display: inline-block;
     width: 500px;
     text-align: right;
+    padding: 5px;
     margin-right: 10px;
     background: rgba(255, 255, 255, 0.5);
     border-radius: 10px;
