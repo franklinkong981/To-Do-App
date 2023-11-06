@@ -40,5 +40,8 @@ ul.addEventListener("click", function(e) {
             listItemToMark.style.textDecoration = "none";
         }
     }
-    
+    else if (e.target.classList.contains("remove-button")) {
+        const listItemToDelete = e.target.parentElement;
+        listItemToDelete.remove();
+    }
 })
