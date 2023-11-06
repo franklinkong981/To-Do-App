@@ -26,7 +26,7 @@ function makeExistingListItem(itemToDo, isMarked) {
     const markButton = document.createElement("button");
     if (isMarked) {
         markButton.innerText = "Unmark";
-        newSpan.style.textDecoration = "line-through";
+        newSpan.classList.add("marked");
     }
     else {
         markButton.innerText = "Mark as Complete";
@@ -83,11 +83,11 @@ ul.addEventListener("click", function(e) {
         if (e.target.innerText === "Mark as Complete") {
             e.target.innerText = "Unmark";
             checkItemInLocalStorage(listItemToMark.innerText);
-            listItemToMark.style.textDecoration = "line-through";
+            listItemToMark.classList.add("marked");
         }
         else {
             e.target.innerText = "Mark as Complete";
-            listItemToMark.style.textDecoration = "none";
+            listItemToMark.classList.remove("marked");
             uncheckItemInLocalStorage(listItemToMark.innerText);
         }
     }
